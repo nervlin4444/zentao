@@ -1,0 +1,89 @@
+20121211 12:31:12: /install.php
+
+20121211 12:31:16: /install.php?m=install&f=step1
+
+20121211 12:31:25: /install.php?m=install&f=step2
+
+20121211 12:31:41: /install.php?m=install&f=step3
+
+20121211 12:31:44: /install.php?m=install&f=step4
+
+20121211 12:32:12: /install.php?m=install&f=step4
+  INSERT INTO `zt_company` SET `name` = 'zentaopms',`pms` = 'zentaopms',`admins` = ',nervlin,'
+  INSERT INTO `zt_user` SET `account` = 'nervlin',`realname` = 'nervlin',`password` = '4ff2db6d5dbaf9202e5e879f446c6fb6',`company` = '1'
+  UPDATE `zt_group` SET  company  = '1'
+  UPDATE `zt_groupPriv` SET  company  = '1'
+  REPLACE `zt_config` SET `company` = '0',`owner` = 'system',`module` = 'common',`section` = 'global',`key` = 'version',`value` = '3.3'
+  SELECT `value` FROM `zt_config` WHERE company  = '0' AND owner  = 'system' AND module  = 'common' AND section  = 'global' AND `key`  = 'sn'
+  REPLACE `zt_config` SET `company` = '0',`owner` = 'system',`module` = 'common',`section` = 'global',`key` = 'sn',`value` = '360521cd25c17ca7c8ad1a7aaa37adbc'
+
+20121211 12:32:12: /install.php?m=install&f=step5
+
+20121211 14:38:07: /install.php
+
+20121211 14:38:09: /install.php?m=install&f=step1
+
+20121211 14:38:11: /install.php?m=install&f=step2
+
+20121211 14:38:15: /install.php?m=install&f=step3
+
+20121211 14:38:21: /install.php?m=install&f=step3
+
+20121211 14:38:29: /install.php?m=install&f=step3
+
+20121211 14:38:31: /install.php?m=install&f=step4
+
+20121211 14:38:55: /install.php?m=install&f=step4
+  INSERT INTO `zt_company` SET `name` = 'near.nas',`pms` = 'zentaopms',`admins` = ',nervlin,'
+  INSERT INTO `zt_user` SET `account` = 'nervlin',`realname` = 'nervlin',`password` = '4ff2db6d5dbaf9202e5e879f446c6fb6',`company` = '1'
+  UPDATE `zt_group` SET  company  = '1'
+  UPDATE `zt_groupPriv` SET  company  = '1'
+  REPLACE `zt_config` SET `company` = '0',`owner` = 'system',`module` = 'common',`section` = 'global',`key` = 'version',`value` = '3.3'
+  SELECT `value` FROM `zt_config` WHERE company  = '0' AND owner  = 'system' AND module  = 'common' AND section  = 'global' AND `key`  = 'sn'
+  REPLACE `zt_config` SET `company` = '0',`owner` = 'system',`module` = 'common',`section` = 'global',`key` = 'sn',`value` = 'd221e0828301952c59e8e075dda760f6'
+
+20121211 14:38:55: /install.php?m=install&f=step5
+
+20121211 14:40:11: /install.php
+
+20121211 14:40:13: /install.php?m=install&f=step1
+
+20121211 14:40:14: /install.php?m=install&f=step2
+
+20121211 14:40:24: /install.php?m=install&f=step3
+
+20121211 14:40:26: /install.php?m=install&f=step4
+
+20121211 14:40:42: /install.php?m=install&f=step4
+  INSERT INTO `zt_company` SET `name` = 'near.nas',`pms` = 'zentaopms',`admins` = ',root,'
+  INSERT INTO `zt_user` SET `account` = 'root',`realname` = 'root',`password` = 'bcffd77e39d7dafcde0e0838c3669ca0',`company` = '1'
+  UPDATE `zt_group` SET  company  = '1'
+  UPDATE `zt_groupPriv` SET  company  = '1'
+  REPLACE `zt_config` SET `company` = '1',`module` = 'common',`owner` = 'system',`section` = 'global',`key` = 'showDemoUsers',`value` = '1'
+  REPLACE `zt_config` SET `company` = '0',`owner` = 'system',`module` = 'common',`section` = 'global',`key` = 'version',`value` = '3.3'
+  SELECT `value` FROM `zt_config` WHERE company  = '0' AND owner  = 'system' AND module  = 'common' AND section  = 'global' AND `key`  = 'sn'
+  REPLACE `zt_config` SET `company` = '0',`owner` = 'system',`module` = 'common',`section` = 'global',`key` = 'sn',`value` = '7005c59227a0986141233cbc5ad9830e'
+
+20121211 14:40:43: /install.php?m=install&f=step5
+
+20121211 14:41:21: /install.php
+
+20121211 14:41:24: /install.php?m=install&f=step1
+
+20121211 14:41:26: /install.php?m=install&f=step2
+
+20121211 14:41:36: /install.php?m=install&f=step3
+
+20121211 14:41:37: /install.php?m=install&f=step4
+
+20121211 14:41:52: /install.php?m=install&f=step4
+  INSERT INTO `zt_company` SET `name` = 'near.nas',`pms` = 'zentaopms',`admins` = ',root,'
+  INSERT INTO `zt_user` SET `account` = 'root',`realname` = 'root',`password` = 'bcffd77e39d7dafcde0e0838c3669ca0',`company` = '1'
+  UPDATE `zt_group` SET  company  = '1'
+  UPDATE `zt_groupPriv` SET  company  = '1'
+  REPLACE `zt_config` SET `company` = '0',`owner` = 'system',`module` = 'common',`section` = 'global',`key` = 'version',`value` = '3.3'
+  SELECT `value` FROM `zt_config` WHERE company  = '0' AND owner  = 'system' AND module  = 'common' AND section  = 'global' AND `key`  = 'sn'
+  REPLACE `zt_config` SET `company` = '0',`owner` = 'system',`module` = 'common',`section` = 'global',`key` = 'sn',`value` = '92e0bd0339affc34fa6879407650e7ed'
+
+20121211 14:41:53: /install.php?m=install&f=step5
+

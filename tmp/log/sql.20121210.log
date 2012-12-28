@@ -1,0 +1,40 @@
+20121210 09:41:15: /install.php
+
+20121210 09:41:32: /install.php
+
+20121210 09:41:34: /install.php?m=install&f=step1
+
+20121210 09:41:52: /install.php?m=install&f=step2
+
+20121210 09:42:54: /install.php?m=misc&f=ping&t=html
+
+20121210 09:43:53: /install.php?m=install&f=step3
+
+20121210 09:45:03: /install.php?m=misc&f=ping&t=html
+
+20121210 10:25:36: /install.php?m=install&f=step3
+
+20121210 15:51:59: /install.php
+
+20121210 15:53:00: /install.php?m=misc&f=ping&t=html
+
+20121210 15:53:02: /install.php?m=install&f=step1
+
+20121210 15:53:04: /install.php?m=install&f=step2
+
+20121210 15:53:18: /install.php?m=install&f=step3
+
+20121210 15:53:21: /install.php?m=install&f=step4
+
+20121210 15:54:14: /install.php?m=install&f=step4
+  INSERT INTO `zt_company` SET `name` = 'near.nas',`pms` = 'zentaopms',`admins` = ',nervlin,'
+  INSERT INTO `zt_user` SET `account` = 'nervlin',`realname` = 'nervlin',`password` = '4ff2db6d5dbaf9202e5e879f446c6fb6',`company` = '1'
+  UPDATE `zt_group` SET  company  = '1'
+  UPDATE `zt_groupPriv` SET  company  = '1'
+  REPLACE `zt_config` SET `company` = '1',`module` = 'common',`owner` = 'system',`section` = 'global',`key` = 'showDemoUsers',`value` = '1'
+  REPLACE `zt_config` SET `company` = '0',`owner` = 'system',`module` = 'common',`section` = 'global',`key` = 'version',`value` = '3.3'
+  SELECT `value` FROM `zt_config` WHERE company  = '0' AND owner  = 'system' AND module  = 'common' AND section  = 'global' AND `key`  = 'sn'
+  REPLACE `zt_config` SET `company` = '0',`owner` = 'system',`module` = 'common',`section` = 'global',`key` = 'sn',`value` = 'a3c7cbab562d7b2bde0b2d2a01cd7518'
+
+20121210 15:54:14: /install.php?m=install&f=step5
+

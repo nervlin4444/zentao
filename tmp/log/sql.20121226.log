@@ -1,0 +1,304 @@
+20121226 23:08:34: /install.php?m=misc&f=ping&t=html
+
+20121226 23:09:02: /install.php?m=install&f=step1
+
+20121226 23:09:21: 
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+
+20121226 23:09:21: user-login-Lw==
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+  SELECT account, realname FROM `zt_user` WHERE deleted  = '0'  AND  `zt_user`.company = '1'  ORDER BY account
+  SELECT value FROM `zt_config` WHERE `key`  = 'showDemoUsers' AND  `zt_config`.company = '1' 
+  SELECT `value` FROM `zt_config` WHERE company  = '0' AND owner  = 'system' AND module  = 'common' AND section  = 'global' AND `key`  = 'sn'
+
+20121226 23:09:28: user-login-Lw==
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+  SELECT * FROM `zt_user` WHERE account  = 'root' AND password  = 'bcffd77e39d7dafcde0e0838c3669ca0' AND deleted  = '0' AND  `zt_user`.company = '1' 
+  UPDATE `zt_user` SET  visits = visits + 1 , ip = '127.0.4.9', last = '1356534568' WHERE account  = 'root' AND  `zt_user`.company = '1' 
+  SELECT module, method FROM `zt_userGroup` AS t1  LEFT JOIN `zt_groupPriv` AS t2  ON t1.group = t2.group  WHERE t1.account  = 'root' AND  t1.company = '1' 
+
+20121226 23:10:22: misc-ping
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+
+20121226 23:10:22: user-login-L21pc2MtcGluZy5odG1s
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+  SELECT account, realname FROM `zt_user` WHERE deleted  = '0'  AND  `zt_user`.company = '1'  ORDER BY account
+  SELECT value FROM `zt_config` WHERE `key`  = 'showDemoUsers' AND  `zt_config`.company = '1' 
+  SELECT `value` FROM `zt_config` WHERE company  = '0' AND owner  = 'system' AND module  = 'common' AND section  = 'global' AND `key`  = 'sn'
+
+20121226 23:11:22: misc-ping
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+
+20121226 23:11:22: user-login-L21pc2MtcGluZy5odG1s
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+  SELECT account, realname FROM `zt_user` WHERE deleted  = '0'  AND  `zt_user`.company = '1'  ORDER BY account
+  SELECT value FROM `zt_config` WHERE `key`  = 'showDemoUsers' AND  `zt_config`.company = '1' 
+  SELECT `value` FROM `zt_config` WHERE company  = '0' AND owner  = 'system' AND module  = 'common' AND section  = 'global' AND `key`  = 'sn'
+
+20121226 23:12:22: misc-ping
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+
+20121226 23:12:22: user-login-L21pc2MtcGluZy5odG1s
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+  SELECT account, realname FROM `zt_user` WHERE deleted  = '0'  AND  `zt_user`.company = '1'  ORDER BY account
+  SELECT value FROM `zt_config` WHERE `key`  = 'showDemoUsers' AND  `zt_config`.company = '1' 
+  SELECT `value` FROM `zt_config` WHERE company  = '0' AND owner  = 'system' AND module  = 'common' AND section  = 'global' AND `key`  = 'sn'
+
+20121226 23:13:23: misc-ping
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+
+20121226 23:13:23: user-login-L21pc2MtcGluZy5odG1s
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+  SELECT account, realname FROM `zt_user` WHERE deleted  = '0'  AND  `zt_user`.company = '1'  ORDER BY account
+  SELECT value FROM `zt_config` WHERE `key`  = 'showDemoUsers' AND  `zt_config`.company = '1' 
+  SELECT `value` FROM `zt_config` WHERE company  = '0' AND owner  = 'system' AND module  = 'common' AND section  = 'global' AND `key`  = 'sn'
+
+20121226 23:14:23: misc-ping
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+
+20121226 23:14:23: user-login-L21pc2MtcGluZy5odG1s
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+  SELECT account, realname FROM `zt_user` WHERE deleted  = '0'  AND  `zt_user`.company = '1'  ORDER BY account
+  SELECT value FROM `zt_config` WHERE `key`  = 'showDemoUsers' AND  `zt_config`.company = '1' 
+  SELECT `value` FROM `zt_config` WHERE company  = '0' AND owner  = 'system' AND module  = 'common' AND section  = 'global' AND `key`  = 'sn'
+
+20121226 23:15:23: misc-ping
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+
+20121226 23:15:23: user-login-L21pc2MtcGluZy5odG1s
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+  SELECT account, realname FROM `zt_user` WHERE deleted  = '0'  AND  `zt_user`.company = '1'  ORDER BY account
+  SELECT value FROM `zt_config` WHERE `key`  = 'showDemoUsers' AND  `zt_config`.company = '1' 
+  SELECT `value` FROM `zt_config` WHERE company  = '0' AND owner  = 'system' AND module  = 'common' AND section  = 'global' AND `key`  = 'sn'
+
+20121226 23:16:23: misc-ping
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+
+20121226 23:16:24: user-login-L21pc2MtcGluZy5odG1s
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+  SELECT account, realname FROM `zt_user` WHERE deleted  = '0'  AND  `zt_user`.company = '1'  ORDER BY account
+  SELECT value FROM `zt_config` WHERE `key`  = 'showDemoUsers' AND  `zt_config`.company = '1' 
+  SELECT `value` FROM `zt_config` WHERE company  = '0' AND owner  = 'system' AND module  = 'common' AND section  = 'global' AND `key`  = 'sn'
+
+20121226 23:17:24: misc-ping
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+
+20121226 23:17:24: user-login-L21pc2MtcGluZy5odG1s
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+  SELECT account, realname FROM `zt_user` WHERE deleted  = '0'  AND  `zt_user`.company = '1'  ORDER BY account
+  SELECT value FROM `zt_config` WHERE `key`  = 'showDemoUsers' AND  `zt_config`.company = '1' 
+  SELECT `value` FROM `zt_config` WHERE company  = '0' AND owner  = 'system' AND module  = 'common' AND section  = 'global' AND `key`  = 'sn'
+
+20121226 23:18:24: misc-ping
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+
+20121226 23:18:24: user-login-L21pc2MtcGluZy5odG1s
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+  SELECT account, realname FROM `zt_user` WHERE deleted  = '0'  AND  `zt_user`.company = '1'  ORDER BY account
+  SELECT value FROM `zt_config` WHERE `key`  = 'showDemoUsers' AND  `zt_config`.company = '1' 
+  SELECT `value` FROM `zt_config` WHERE company  = '0' AND owner  = 'system' AND module  = 'common' AND section  = 'global' AND `key`  = 'sn'
+
+20121226 23:19:24: misc-ping
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+
+20121226 23:19:25: user-login-L21pc2MtcGluZy5odG1s
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+  SELECT account, realname FROM `zt_user` WHERE deleted  = '0'  AND  `zt_user`.company = '1'  ORDER BY account
+  SELECT value FROM `zt_config` WHERE `key`  = 'showDemoUsers' AND  `zt_config`.company = '1' 
+  SELECT `value` FROM `zt_config` WHERE company  = '0' AND owner  = 'system' AND module  = 'common' AND section  = 'global' AND `key`  = 'sn'
+
+20121226 23:20:25: misc-ping
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+
+20121226 23:20:25: user-login-L21pc2MtcGluZy5odG1s
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+  SELECT account, realname FROM `zt_user` WHERE deleted  = '0'  AND  `zt_user`.company = '1'  ORDER BY account
+  SELECT value FROM `zt_config` WHERE `key`  = 'showDemoUsers' AND  `zt_config`.company = '1' 
+  SELECT `value` FROM `zt_config` WHERE company  = '0' AND owner  = 'system' AND module  = 'common' AND section  = 'global' AND `key`  = 'sn'
+
+20121226 23:21:25: misc-ping
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+
+20121226 23:21:25: user-login-L21pc2MtcGluZy5odG1s
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+  SELECT account, realname FROM `zt_user` WHERE deleted  = '0'  AND  `zt_user`.company = '1'  ORDER BY account
+  SELECT value FROM `zt_config` WHERE `key`  = 'showDemoUsers' AND  `zt_config`.company = '1' 
+  SELECT `value` FROM `zt_config` WHERE company  = '0' AND owner  = 'system' AND module  = 'common' AND section  = 'global' AND `key`  = 'sn'
+
+20121226 23:22:25: misc-ping
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+
+20121226 23:22:25: user-login-L21pc2MtcGluZy5odG1s
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+  SELECT account, realname FROM `zt_user` WHERE deleted  = '0'  AND  `zt_user`.company = '1'  ORDER BY account
+  SELECT value FROM `zt_config` WHERE `key`  = 'showDemoUsers' AND  `zt_config`.company = '1' 
+  SELECT `value` FROM `zt_config` WHERE company  = '0' AND owner  = 'system' AND module  = 'common' AND section  = 'global' AND `key`  = 'sn'
+
+20121226 23:23:26: misc-ping
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+
+20121226 23:23:26: user-login-L21pc2MtcGluZy5odG1s
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+  SELECT account, realname FROM `zt_user` WHERE deleted  = '0'  AND  `zt_user`.company = '1'  ORDER BY account
+  SELECT value FROM `zt_config` WHERE `key`  = 'showDemoUsers' AND  `zt_config`.company = '1' 
+  SELECT `value` FROM `zt_config` WHERE company  = '0' AND owner  = 'system' AND module  = 'common' AND section  = 'global' AND `key`  = 'sn'
+
+20121226 23:24:26: misc-ping
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+
+20121226 23:24:26: user-login-L21pc2MtcGluZy5odG1s
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+  SELECT account, realname FROM `zt_user` WHERE deleted  = '0'  AND  `zt_user`.company = '1'  ORDER BY account
+  SELECT value FROM `zt_config` WHERE `key`  = 'showDemoUsers' AND  `zt_config`.company = '1' 
+  SELECT `value` FROM `zt_config` WHERE company  = '0' AND owner  = 'system' AND module  = 'common' AND section  = 'global' AND `key`  = 'sn'
+
+20121226 23:25:26: misc-ping
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+
+20121226 23:25:26: user-login-L21pc2MtcGluZy5odG1s
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+  SELECT account, realname FROM `zt_user` WHERE deleted  = '0'  AND  `zt_user`.company = '1'  ORDER BY account
+  SELECT value FROM `zt_config` WHERE `key`  = 'showDemoUsers' AND  `zt_config`.company = '1' 
+  SELECT `value` FROM `zt_config` WHERE company  = '0' AND owner  = 'system' AND module  = 'common' AND section  = 'global' AND `key`  = 'sn'
+
+20121226 23:26:27: misc-ping
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+
+20121226 23:26:27: user-login-L21pc2MtcGluZy5odG1s
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+  SELECT account, realname FROM `zt_user` WHERE deleted  = '0'  AND  `zt_user`.company = '1'  ORDER BY account
+  SELECT value FROM `zt_config` WHERE `key`  = 'showDemoUsers' AND  `zt_config`.company = '1' 
+  SELECT `value` FROM `zt_config` WHERE company  = '0' AND owner  = 'system' AND module  = 'common' AND section  = 'global' AND `key`  = 'sn'
+
+20121226 23:27:27: misc-ping
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+
+20121226 23:27:27: user-login-L21pc2MtcGluZy5odG1s
+  SELECT * FROM `zt_company` WHERE `pms` = 'zentao' 
+  SELECT * FROM `zt_company` WHERE `pms` = 'yii.zapto.org' 
+  SELECT * FROM `zt_company` ORDER BY id LIMIT 1 
+  SELECT account, realname FROM `zt_user` WHERE deleted  = '0'  AND  `zt_user`.company = '1'  ORDER BY account
+  SELECT value FROM `zt_config` WHERE `key`  = 'showDemoUsers' AND  `zt_config`.company = '1' 
+  SELECT `value` FROM `zt_config` WHERE company  = '0' AND owner  = 'system' AND module  = 'common' AND section  = 'global' AND `key`  = 'sn'
+
+20121226 23:28:19: /install.php
+
+20121226 23:28:22: /install.php?m=install&f=step1
+
+20121226 23:28:28: /install.php?m=install&f=step1
+
+20121226 23:28:33: /install.php?m=install&f=step2
+
+20121226 23:28:55: /install.php?m=install&f=step1
+
+20121226 23:29:00: /install.php?m=install&f=step2
+
+20121226 23:29:04: /install.php?m=install&f=step1
+
+20121226 23:29:34: /install.php
+
+20121226 23:29:44: /install.php
+
+20121226 23:29:44: /install.php?m=install&f=step1
+
+20121226 23:29:47: /install.php?m=install&f=step2
+
+20121226 23:30:02: /install.php?m=install&f=step2
+
+20121226 23:30:36: /install.php?m=install&f=step3
+
+20121226 23:30:44: /install.php?m=install&f=step2
+
+20121226 23:30:49: /install.php?m=install&f=step3
+
+20121226 23:31:06: /install.php?m=install&f=step4
+
+20121226 23:31:54: /install.php?m=install&f=step4
+  INSERT INTO `zt_company` SET `name` = 'yii. zapto.org',`pms` = 'yii.zapto.org',`admins` = ',root,'
+  INSERT INTO `zt_user` SET `account` = 'root',`realname` = 'root',`password` = 'bcffd77e39d7dafcde0e0838c3669ca0',`company` = '1'
+  UPDATE `zt_group` SET  company  = '1'
+  UPDATE `zt_groupPriv` SET  company  = '1'
+  REPLACE `zt_config` SET `company` = '0',`owner` = 'system',`module` = 'common',`section` = 'global',`key` = 'version',`value` = '3.3'
+  SELECT `value` FROM `zt_config` WHERE company  = '0' AND owner  = 'system' AND module  = 'common' AND section  = 'global' AND `key`  = 'sn'
+  REPLACE `zt_config` SET `company` = '0',`owner` = 'system',`module` = 'common',`section` = 'global',`key` = 'sn',`value` = '286565c8ce8fbaa2a9d7a1507bc6c152'
+
+20121226 23:31:54: /install.php?m=install&f=step5
+
+20121226 23:35:08: /install.php
+
