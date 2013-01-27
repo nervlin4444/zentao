@@ -1,7 +1,7 @@
 <?php
 $config->mail->turnon      = 0;    // trun on email feature or not.
-$config->mail->fromAddress = '';       // The from address.
-$config->mail->fromName    = 'zentao';  // The from name.
+$config->mail->fromAddress = 'nervlin@gmail.com';       // The from address.
+$config->mail->fromName    = 'Kevin';  // The from name.
 $config->mail->mta         = 'smtp';   // smtp|phpmail.
 
 /* SMTP settings. */
@@ -9,11 +9,11 @@ if($config->mail->mta == 'smtp')
 {
     $config->mail->smtp->debug    = 0;          // Debug level, 0,1,2.
     $config->mail->smtp->auth     = true;       // Need auth or not.
-    $config->mail->smtp->host     = 'localhost';         // The smtp server host address.
-    $config->mail->smtp->port     = '25';         // The smtp server host port.
-    $config->mail->smtp->secure   = '';         // The type to encode datas, 'ssl' or 'tls' allowed
-    $config->mail->smtp->username = '';         // The smtp user, may be a full email adress.
-    $config->mail->smtp->password = '';         // The smtp user's password.
+    $config->mail->smtp->host     = 'smtp.gmail.com';         // The smtp server host address.
+    $config->mail->smtp->port     = '465';         // The smtp server host port.
+    $config->mail->smtp->secure   = 'ssl';         // The type to encode datas, 'ssl' or 'tls' allowed
+    $config->mail->smtp->username = 'nervlin';         // The smtp user, may be a full email adress.
+    $config->mail->smtp->password = 'nerv_lin';         // The smtp user's password.
 }
 
 $config->mail->provider['163.com']->host      = 'smtp.163.com';
@@ -35,8 +35,8 @@ $config->mail->provider['21cn.com']->host     = 'smtp.21cn.com';
 $config->mail->provider['qq.com']->host       = 'smtp.qq.com';
 
 $config->mail->provider['gmail.com']->host    = 'smtp.gmail.com';
-$config->mail->provider['gmail.com']->secure  = 'ssl';
-$config->mail->provider['gmail.com']->port    = '465';
+$config->mail->provider['gmail.com']->secure  = 'tls';
+$config->mail->provider['gmail.com']->port    = '587';
 $config->mail->provider['google.com']         = $config->mail->provider['gmail.com'];
 $config->mail->provider['googlemail.com']     = $config->mail->provider['gmail.com'];
 

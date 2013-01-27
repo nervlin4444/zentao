@@ -656,10 +656,23 @@ class task extends control
         $this->view->task   = $task;
         $this->view->action = $action;
         $this->clear();
-        $mailContent = $this->parse($this->moduleName, 'sendmail');
+
+        //kevin add start 
+        if(strpos($projectName,"Mega-retail")!==false)//get content
+        $mailContent = $this->parse($this->moduleName.".".
+        strtolower(str_replace(array(" ") ,"-", $projectName)), 'sendmail');
+        else 
+       $mailContent = $this->parse($this->moduleName, 'sendmail');
+       	//kevin add end
 
         /* Send emails. */
-        $this->loadModel('mail')->send($toList, $projectName . ':' . 'TASK#' . $task->id . $this->lang->colon . $task->name, $mailContent, $ccList);
+        //kevin add start 
+//www($projectName,$projectName=="Mega-retail");        
+        if($projectName=="Mega-retail")//get email
+        $this->loadModel('mail')->send($toList, $projectName . ':' . "Daily Job-Log ( " .$task->assignedTo. " )", $mailContent, $ccList);
+        else
+		$this->loadModel('mail')->send($toList, $projectName . ':' . 'TASK#' . $task->id . $this->lang->colon . $task->name, $mailContent, $ccList);
+        //kevin add end 
         if($this->mail->isError()) echo js::error($this->mail->getError());
     }
     

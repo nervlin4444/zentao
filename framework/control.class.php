@@ -277,7 +277,37 @@ class control
         if(!empty($extHookFiles)) return array('viewFile' => $viewFile, 'hookFiles' => $extHookFiles);
         return $viewFile;
     }
-
+    
+    /**
+     * Set the view file, thus can use fetch other module's page.
+     *
+     * @param  string   $moduleName    module name
+     * @param  string   $methodName    method name
+     * @access private
+     * @return string  the view file
+     */
+    private function setProjectViewFile($moduleName, $projectName, $methodName)
+    {
+    	$moduleName = strtolower(trim($moduleName));
+    	$methodName = strtolower(trim($methodName));
+    
+    	$modulePath  = $this->app->getModulePath($moduleName);
+    	$viewExtPath = $this->app->getModuleExtPath($moduleName, 'view').
+    	$projectName.DIRECTORY_SEPARATOR;
+    	/* The main view file, extension view file and hook file. */
+    	$mainViewFile = $modulePath . 'view' . $this->pathFix . 
+    	$projectName. DIRECTORY_SEPARATOR.
+    	$methodName . '.' . $this->viewType . '.php';
+    	$extViewFile  = $viewExtPath . $methodName . ".{$this->viewType}.php";
+    	$extHookFiles = glob($viewExtPath . $methodName . "*.{$this->viewType}.hook.php");
+    
+//www($modulePath, $viewExtPath, $mainViewFile, $extViewFile);    
+    	$viewFile = file_exists($extViewFile) ? $extViewFile : $mainViewFile;
+    	if(!is_file($viewFile)) $this->app->error("the view file $viewFile not found", __FILE__, __LINE__, $exit = true);
+    	if(!empty($extHookFiles)) return array('viewFile' => $viewFile, 'hookFiles' => $extHookFiles);
+    	return $viewFile;
+    }
+    
     /**
      * Get the extension file of an view.
      * 
@@ -402,6 +432,11 @@ class control
         {
             $this->parseJSON($moduleName, $methodName);
         }
+        //kevin add start
+        else if(strpos($moduleName,".")!==false){
+        	$this->parseProjectDefault($moduleName, $methodName);
+        }
+        //kevin add end
         else
         {
             $this->parseDefault($moduleName, $methodName);
@@ -432,7 +467,45 @@ class control
         $output['md5']    = md5(json_encode($this->view));
         $this->output     = json_encode($output);
     }
-
+    /**
+     * Parse default html format.
+     *
+     * @param string $moduleName    module name
+     * @param string $methodName    method name
+     * @access private
+     * @return void
+     */
+    private function parseProjectDefault($moduleName, $methodName)
+    {
+    	$moduleName=explode(".", $moduleName);
+    	$projectName=array_pop($moduleName);
+    	$moduleName=array_pop($moduleName);
+    	
+    	/* Set the view file. */
+    	$viewFile = $this->setProjectViewFile($moduleName, $projectName, $methodName);
+    	if(is_array($viewFile)) extract($viewFile);
+    
+    	/* Get css and js. */
+    	$css = $this->getCSS($moduleName, $methodName);
+    	$js  = $this->getJS($moduleName, $methodName);
+    	if($css) $this->view->pageCss = $css;
+    	if($js)  $this->view->pageJS  = $js;
+    
+    	/* Change the dir to the view file to keep the relative pathes work. */
+    	$currentPWD = getcwd();
+    	chdir(dirname($viewFile));
+    
+    	extract((array)$this->view);
+//www($this->output);
+    	ob_start();
+    	include $viewFile;
+    	if(isset($hookFiles)) foreach($hookFiles as $hookFile) include $hookFile;
+    	$this->output .= ob_get_contents();
+    	ob_end_clean();
+//www($this->output);    
+    	/* At the end, chang the dir to the previous. */
+    	chdir($currentPWD);
+    }
     /**
      * Parse default html format.
      *

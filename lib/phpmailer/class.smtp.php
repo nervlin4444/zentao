@@ -130,6 +130,7 @@ class SMTP {
                                  $errno,   // error number if any
                                  $errstr,  // error message if any
                                  $tval);   // give up after ? secs
+    
     // verify we connected properly
     if(empty($this->smtp_conn)) {
       $this->error = array("error" => "Failed to connect to server",

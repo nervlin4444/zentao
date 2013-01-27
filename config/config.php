@@ -42,7 +42,7 @@ $config->langs['en']    = 'English';
 $config->default->view   = 'html';        // Default view.
 $config->default->lang   = 'en';          // Default language.
 $config->default->theme  = 'default';     // Default theme.
-$config->default->module = 'index';       // Default module.
+$config->default->module = 'my';//kevin add //index';       // Default module.
 $config->default->method = 'index';       // Default method.
 
 /* Upload settings. */
