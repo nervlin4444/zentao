@@ -402,6 +402,7 @@ class taskModel extends model
             ->setDefault('finishedBy, lastEditedBy', $this->app->user->account)
             ->setDefault('finishedDate, lastEditedDate', $now) 
             ->remove('comment')->get();
+
         $this->setStatus($task);
 
         $this->dao->update(TABLE_TASK)->data($task)
@@ -500,6 +501,36 @@ class taskModel extends model
 
     }
 
+    //kevin add start 2013-06-02
+    /**
+     * Get task info by Id.
+     *
+     * @param  int    $taskID
+     * @param  bool   $setImgSize
+     * @access public
+     * @return object|bool
+     */
+    public function getLastTaskWithComment()
+    {
+    	$task = $this->dao->select(
+    	't1.*, t2.id AS storyID, t2.title AS storyTitle, t2.version AS latestStoryVersion, t2.status AS storyStatus
+    	  ,t3.realname AS assignedToRealName
+    	  ,t4.comment')
+    	->from(TABLE_TASK)->alias('t1')
+    	->leftJoin(TABLE_STORY)->alias('t2')
+    	->on('t1.story = t2.id')
+    	->leftJoin(TABLE_USER)->alias('t3')
+    	->on('t1.assignedTo = t3.account')
+    	->leftJoin(TABLE_ACTION)->alias('t4')
+    	->on('t1.id = t4.objectID AND t4.objectType = "task" AND t4.action = "finished" ')
+    	->orderBy("t1.id desc")
+        ->limit(1)
+        ->fetch();
+    	if(!$task) return false;
+    	return $task;
+    }
+    //kevin add end 2013-06-02
+    
     /**
      * Get task info by Id.
      * 

@@ -8,6 +8,9 @@ $config->task->activate->requiredFields    = 'left';
 
 $config->task->editor->create = array('id' => 'desc', 'tools' => 'simpleTools');
 $config->task->editor->edit   = array('id' => 'desc', 'tools' => 'simpleTools');
+//kevin add start 2003-06-02
+$config->task->editor->finish   = array('id' => 'comment', 'tools' => 'simpleTools');
+//kevin add end 2003-06-02
 
 $config->task->exportFields = '
     id, project, story,

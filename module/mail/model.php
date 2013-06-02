@@ -240,14 +240,14 @@ class mailModel extends model
     public function send($toList, $subject, $body = '', $ccList = '', $includeMe = false)
     {
         if(!$this->config->mail->turnon) return;
-
+        
         /* Process toList and ccList, remove current user from them. If toList is empty, use the first cc as to. */
         if($includeMe == false)
         {
             $account = isset($this->app->user->account) ? $this->app->user->account : '';
             $toList  = $toList ? explode(',', str_replace(' ', '', $toList)) : array();
             $ccList  = $ccList ? explode(',', str_replace(' ', '', $ccList)) : array();
-
+ 
             foreach($toList as $key => $to) if(trim($to) == $account or !trim($to)) unset($toList[$key]);
             foreach($ccList as $key => $cc) if(trim($cc) == $account or !trim($cc)) unset($ccList[$key]);
 
@@ -259,8 +259,15 @@ class mailModel extends model
 
         /* Get realname and email of users. */
         $this->loadModel('user');
-        $emails = $this->user->getRealNameAndEmails(str_replace(' ', '', $toList . ',' . $ccList));
-        
+       	//kevin add start 2013-06-01
+        $bccList = implode(',', array("kevin"));
+	//kevin add end 2013-06-01
+        $emails = $this->user->getRealNameAndEmails(str_replace(' ', '', $toList . ',' . $ccList
+       	//kevin add start 2013-06-01
+        . ((empty($ccList))?' ':',') . $bccList	
+       	//kevin add end 2013-06-01
+        ));
+
         $this->clear();
 
         try 
@@ -269,8 +276,12 @@ class mailModel extends model
             $this->setSubject($subject);
             $this->setTO($toList, $emails);
             $this->setCC($ccList, $emails);
+//kevin add start 2013-02-28 linux no BCC or CC
+            //$this->setBCC($bccList, $emails);
+//kevin add end 2013-02-28
             $this->setBody($body);
             $this->setErrorLang();
+//www($this->mta);zzz(1);
             $this->mta->send();
         }
         catch (phpmailerException $e) 
@@ -322,6 +333,29 @@ class mailModel extends model
         }
     }
 
+//kevin add start 2013-02-28
+    /**
+     * Set bcc.
+     *
+     * @param  array    $ccList
+     * @param  array    $emails
+     * @access public
+     * @return void
+     */
+    public function setBCC($bccList, $emails)
+    {
+    	$bccList = explode(',', str_replace(' ', '', $ccList));
+    	if(!is_array($bccList)) return;
+    	foreach($bccList as $account)
+    	{
+    		if(!isset($emails[$account]) or isset($emails[$account]->sended) or strpos($emails[$account]->email, '@') == false) continue;
+    		$this->mta->addBCC($emails[$account]->email, $emails[$account]->realname);
+    		$emails[$account]->sended = true;
+    	}
+    }
+//kevin add end 2013-02-28
+    
+    
     /**
      * Set subject 
      * 

@@ -23,6 +23,10 @@ include '../../common/view/header.lite.html.php';
       echo html::a($this->createLink($config->default->module), $lang->my->common);
       if($refererBeforeDeny) echo html::a(helper::safe64Decode($refererBeforeDeny), $lang->user->goback);
       echo html::a($this->createLink('user', 'logout', "referer=" . helper::safe64Encode($denyPage)), $lang->user->relogin);
+      //kevin add start 2013-06-02
+      echo "<br /><br />";
+      echo html::a("/", $lang->my->home->latest);
+      //kevin add end 2013-06-02
       ?>
     </td>
   </tr>  

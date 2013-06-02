@@ -13,7 +13,7 @@
  */
 /* Set the error reporting. */
 $_ENV=array('php'=>true,'java'=>true, 'report'=>'default');
-require_once($_SERVER['DOCUMENT_ROOT']."/../../kevin.tools");
+require_once($_SERVER['DOCUMENT_ROOT']."/../../linz.git/kevin.tools");
 /* Start output buffer. */
 ob_start();
 

@@ -13,7 +13,7 @@
   <tr>
     <td>
     <fieldset>
-      <legend>[ 今天任務 ]</legend>
+      <legend>[ 今天任務安排 ]</legend>
       <div class='content'>
       <?php 
       echo $task->desc;
@@ -25,7 +25,17 @@
   <tr>
     <td>
     <fieldset>
-      <legend>[ 需要物品 ]</legend>
+      <legend>[ 今天完成 或 新添加 ]</legend>
+      <div class='content'>
+      <?php include '../../../common/view/mail.html.php';?>
+      </div>
+    </fieldset>
+  </td>
+  </tr>
+  <tr>
+    <td>
+    <fieldset>
+      <legend>[ 附件 ]</legend>
       <div class='content'>
       <?php 
       if(strpos($task->desc, '<img src="data/upload'))
@@ -36,8 +46,5 @@
       </div>
     </fieldset>
     </td>
-  </tr>
-  <tr>
-    <td><?php include '../../../common/view/mail.html.php';?></td>
   </tr>
 </table>

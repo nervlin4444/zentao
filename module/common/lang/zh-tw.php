@@ -16,7 +16,7 @@ $lang->dot          = '。';
 $lang->at           = ' 于 ';
 $lang->downArrow    = '↓';
 
-$lang->ZenTaoPMS    = '禪道管理';
+$lang->ZenTaoPMS    = '主頁';//kevin'禪道管理';
 $lang->welcome      = "歡迎使用『%s』{$lang->colon} {$lang->ZenTaoPMS}";
 $lang->myControl    = "我的地盤";
 $lang->currentPos   = '當前位置：';

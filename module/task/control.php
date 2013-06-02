@@ -86,6 +86,13 @@ class task extends control
         $this->view->members  = $members;
         $this->view->moduleID = $moduleID;
         $this->view->moduleOptionMenu = $moduleOptionMenu;
+        //kevin add start 2013-06-02
+        $this->view->last = 	$this->loadModel('task')->getLastTaskWithComment();
+        $projectName = $project->name;
+		if(strpos($projectName,"Mega-retail")!==false)
+        $this->displayByProject($projectName, $moduleName, $methodName);
+		else
+       //kevin add end 2013-06-02
         $this->display();
     }
 
@@ -189,7 +196,13 @@ class task extends control
                 if(!empty($files)) $fileAction = $this->lang->addFiles . join(',', $files) . "\n" ;
                 $actionID = $this->action->create('task', $taskID, $action, $fileAction . $this->post->comment);
                 $this->action->logHistory($actionID, $changes);
-                $this->sendmail($taskID, $actionID);
+                //kevin add start
+                $task        = $this->task->getById($taskID);
+                $projectName = $this->project->getById($task->project)->name;
+
+//                if(strpos($projectName,"Mega-retail")!==false)
+                //kevin add end
+//                $this->sendmail($taskID, $actionID);
             }
 
             if($task->fromBug != 0)
@@ -280,7 +293,12 @@ class task extends control
                     {
                         $actionID = $this->loadModel('action')->create('task', $taskID, 'Edited');
                         $this->action->logHistory($actionID, $changes);
-                        $this->sendmail($taskID, $actionID);
+                //kevin add start
+                $task        = $this->task->getById($taskID);
+                $projectName = $this->project->getById($task->project)->name;
+//                if(strpos($projectName,"Mega-retail")!==false)
+                //kevin add end
+//                $this->sendmail($taskID, $actionID);
 
                         $task = $this->task->getById($taskID);
                         if($task->fromBug != 0)
@@ -320,7 +338,12 @@ class task extends control
             if(dao::isError()) die(js::error(dao::getError()));
             $actionID = $this->action->create('task', $taskID, 'Assigned', $this->post->comment, $this->post->assignedTo);
             $this->action->logHistory($actionID, $changes);
-            $this->sendmail($taskID, $actionID);
+                //kevin add start
+                $task        = $this->task->getById($taskID);
+                $projectName = $this->project->getById($task->project)->name;
+//                if(strpos($projectName,"Mega-retail")!==false)
+                //kevin add end
+//                $this->sendmail($taskID, $actionID);
 
             die(js::locate($this->createLink('task', 'view', "taskID=$taskID"), 'parent'));
         }
@@ -360,6 +383,14 @@ class task extends control
         $this->view->users       = $this->loadModel('user')->getPairs('noletter');
         $this->view->preAndNext  = $this->loadModel('common')->getPreAndNextObject('task', $taskID);
         $this->view->modulePath  = $this->tree->getParents($task->module);
+        
+        //kevin add start 2013-06-02
+        $task        = $this->task->getById($taskID);
+		$projectName = $this->project->getById($task->project)->name;
+		if(strpos($projectName,"Mega-retail")!==false)
+        $this->displayByProject($projectName, $moduleName, $methodName);
+		else
+       //kevin add end 2013-06-02
         $this->display();
     }
 
@@ -399,7 +430,12 @@ class task extends control
             {
                 $actionID = $this->action->create('task', $taskID, 'Started', $this->post->comment);
                 $this->action->logHistory($actionID, $changes);
-                $this->sendmail($taskID, $actionID);
+                //kevin add start
+//                $task        = $this->task->getById($taskID);
+//                $projectName = $this->project->getById($task->project)->name;
+//                if(strpos($projectName,"Mega-retail")!==false)
+                //kevin add end
+//                $this->sendmail($taskID, $actionID);
             }
             die(js::locate($this->createLink('task', 'view', "taskID=$taskID"), 'parent'));
         }
@@ -410,7 +446,7 @@ class task extends control
     }
     
     /**
-     * Finish a task.
+     *  a task.
      * 
      * @param  int    $taskID 
      * @access public
@@ -431,6 +467,12 @@ class task extends control
             {
                 $actionID = $this->action->create('task', $taskID, 'Finished', $this->post->comment);
                 $this->action->logHistory($actionID, $changes);
+                //kevin add start
+                $task        = $this->task->getById($taskID);
+                $projectName = $this->project->getById($task->project)->name;
+
+                if(strpos($projectName,"Mega-retail")!==false)
+                //kevin add end
                 $this->sendmail($taskID, $actionID);
             }
 
@@ -453,7 +495,14 @@ class task extends control
         $this->view->position[]    = $this->lang->task->finish;
         $this->view->date            = strftime("%Y-%m-%d %X", strtotime('now'));
        
-        $this->display();
+        //kevin add start 2013-06-02
+        $task        = $this->task->getById($taskID);
+		$projectName = $this->project->getById($task->project)->name;
+		if(strpos($projectName,"Mega-retail")!==false)
+        $this->displayByProject($projectName, $moduleName, $methodName);
+		else
+       //kevin add end 2013-06-02
+		$this->display();
     }
 
     /**
@@ -477,7 +526,14 @@ class task extends control
             {
                 $actionID = $this->action->create('task', $taskID, 'Closed', $this->post->comment);
                 $this->action->logHistory($actionID, $changes);
-                $this->sendmail($taskID, $actionID);
+
+                //kevin add start
+                $task        = $this->task->getById($taskID);
+                $projectName = $this->project->getById($task->project)->name;
+//                if(strpos($projectName,"Mega-retail")!==false)
+                //kevin add end
+//                $this->sendmail($taskID, $actionID);
+
             }
             die(js::locate($this->createLink('task', 'view', "taskID=$taskID"), 'parent'));
         }
@@ -515,7 +571,12 @@ class task extends control
                 {
                     $actionID = $this->action->create('task', $taskID, 'Closed', '');
                     $this->action->logHistory($actionID, $changes);
-                    $this->sendmail($taskID, $actionID);
+                //kevin add start
+                $task        = $this->task->getById($taskID);
+                $projectName = $this->project->getById($task->project)->name;
+//                if(strpos($projectName,"Mega-retail")!==false)
+                //kevin add end
+//                $this->sendmail($taskID, $actionID);
                 }
             }
         }
@@ -543,7 +604,12 @@ class task extends control
             {
                 $actionID = $this->action->create('task', $taskID, 'Canceled', $this->post->comment);
                 $this->action->logHistory($actionID, $changes);
-                $this->sendmail($taskID, $actionID);
+                //kevin add start
+                $task        = $this->task->getById($taskID);
+                $projectName = $this->project->getById($task->project)->name;
+//                if(strpos($projectName,"Mega-retail")!==false)
+                //kevin add end
+//                $this->sendmail($taskID, $actionID);
             }
             die(js::locate($this->createLink('task', 'view', "taskID=$taskID"), 'parent'));
         }
@@ -575,7 +641,12 @@ class task extends control
             {
                 $actionID = $this->action->create('task', $taskID, 'Activated', $this->post->comment);
                 $this->action->logHistory($actionID, $changes);
-                $this->sendmail($taskID, $actionID);
+                //kevin add start
+                $task        = $this->task->getById($taskID);
+                $projectName = $this->project->getById($task->project)->name;
+//                if(strpos($projectName,"Mega-retail")!==false)
+                //kevin add end
+//                $this->sendmail($taskID, $actionID);
             }
             die(js::locate($this->createLink('task', 'view', "taskID=$taskID"), 'parent'));
         }
@@ -662,14 +733,14 @@ class task extends control
         $mailContent = $this->parse($this->moduleName.".".
         strtolower(str_replace(array(" ") ,"-", $projectName)), 'sendmail');
         else 
-       $mailContent = $this->parse($this->moduleName, 'sendmail');
        	//kevin add end
+		$mailContent = $this->parse($this->moduleName, 'sendmail');
 
         /* Send emails. */
         //kevin add start 
-//www($projectName,$projectName=="Mega-retail");        
+		//www($projectName,$projectName=="Mega-retail");        
         if($projectName=="Mega-retail")//get email
-        $this->loadModel('mail')->send($toList, $projectName . ':' . "Daily Job-Log ( " .$task->assignedTo. " )", $mailContent, $ccList);
+        $this->loadModel('mail')->send($toList, $projectName . ':' . "Daily Job-Log ( " .$task->assignedTo. " )", $mailContent, $ccList, true);
         else
 		$this->loadModel('mail')->send($toList, $projectName . ':' . 'TASK#' . $task->id . $this->lang->colon . $task->name, $mailContent, $ccList);
         //kevin add end 

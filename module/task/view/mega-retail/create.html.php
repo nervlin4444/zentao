@@ -10,11 +10,11 @@
  * @link        http://www.zentao.net
  */
 ?>
-<?php include '../../common/view/header.html.php';?>
-<?php include '../../common/view/datepicker.html.php';?>
-<?php include '../../common/view/autocomplete.html.php';?>
-<?php include '../../common/view/chosen.html.php';?>
-<?php include '../../common/view/kindeditor.html.php';?>
+<?php include '../../../common/view/header.html.php';?>
+<?php include '../../../common/view/datepicker.html.php';?>
+<?php include '../../../common/view/autocomplete.html.php';?>
+<?php include '../../../common/view/chosen.html.php';?>
+<?php include '../../../common/view/kindeditor.html.php';?>
 <script> var holders = <?php echo json_encode($lang->task->placeholder);?></script>
 <script language='javascript'> var userList = "<?php echo join(',', array_keys($users));?>".split(',');</script>
 <script language='Javascript'>
@@ -44,7 +44,7 @@ $(function()
     </tr>  
     <tr>
       <th class='rowhead'><?php echo $lang->task->assignedTo;?></th>
-      <td><?php echo html::select('assignedTo[]', $members, '', 'class=select-3');?></td>
+      <td><?php echo html::select('assignedTo[]', $members, 'kevin', 'class=select-3');?></td>
     </tr>
     <tr>
       <th class='rowhead'><?php echo $lang->task->story;?></th>
@@ -57,37 +57,37 @@ $(function()
       <th class='rowhead'><?php echo $lang->task->name;?></th>
       <td>
       <?php
-      echo html::input('name', '', "class='text-1'");
+      echo html::input('name', $project->name.' # '.date("Y-m-d").' [   ]', "class='text-1'");
       echo html::commonButton($lang->task->copyStoryTitle, 'onclick=copyStoryTitle()');?>
       </td>
     </tr>  
     <tr>
       <th class='rowhead'><?php echo $lang->task->desc;?></th>
-      <td><?php echo html::textarea('desc', '', "rows='44' class='area-1'");?></td>
+      <td><?php echo html::textarea('desc', $last->desc."<br/>".$last->comment, "rows='34' class='area-1'");?></td>
     </tr>  
     <tr>
       <th class='rowhead'><?php echo $lang->task->pri;?></th>
-      <td><?php echo html::select('pri', $lang->task->priList, '', 'class=select-3');?> 
+      <td><?php echo html::select('pri', $lang->task->priList, '3', 'class=select-3');?> 
     </tr>
     <tr>
       <th class='rowhead'><?php echo $lang->task->estimate;?></th>
-      <td><?php echo html::input('estimate', '', "class='text-3'") . $lang->task->hour;?></td>
+      <td><?php echo html::input('estimate', '8', "class='text-3'") . $lang->task->hour;?></td>
     </tr>
     <tr>
       <th class='rowhead'><?php echo $lang->task->estStarted;?></th>
-      <td><?php echo html::input('estStarted', '', "class='text-3 date'");?></td>
+      <td><?php echo html::input('estStarted', date("Y-m-d"), "class='text-3 date'");?></td>
     </tr>
     <tr>
       <th class='rowhead'><?php echo $lang->task->deadline;?></th>
-      <td><?php echo html::input('deadline', '', "class='text-3 date'");?></td>
+      <td><?php echo html::input('deadline', date("Y-m-d"), "class='text-3 date'");?></td>
     </tr>
     <tr>
       <th class='rowhead'><?php echo $lang->task->type;?></th>
-      <td><?php echo html::select('type', $lang->task->typeList, '', 'class=select-3 onchange="setOwners(this.value)"');?></td>
+      <td><?php echo html::select('type', $lang->task->typeList, 'devel', 'class=select-3 onchange="setOwners(this.value)"');?></td>
     </tr>
     <tr>
       <th class='rowhead'><?php echo $lang->task->mailto;?></th>
-      <td> <?php echo html::input('mailto', '', 'class=text-1');?> </td>
+      <td> <?php echo html::input('mailto', 'leo, ricky, ', 'class=text-1');?> </td>
     </tr>
     <tr>
       <th class='rowhead'><?php echo $lang->files;?></th>
@@ -95,11 +95,11 @@ $(function()
     </tr>  
     <tr>
       <th class='rowhead'><?php echo $lang->task->afterSubmit;?></th>
-      <td><?php echo html::radio('after', $lang->task->afterChoices, 'continueAdding');?></td> 
+      <td><?php echo html::radio('after', $lang->task->afterChoices, 'toTastList');?></td> 
     </tr>
     <tr>
       <td colspan='2' class='a-center'><?php echo html::submitButton() . html::resetButton();?></td>
     </tr>
   </table>
 </form>
-<?php include '../../common/view/footer.html.php';?>
+<?php include '../../../common/view/footer.html.php';?>

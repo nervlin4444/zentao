@@ -35,7 +35,10 @@ class actionModel extends model
         $action->actor      = $this->app->user->account;
         $action->action     = strtolower($actionType);
         $action->date       = helper::now();
-        $action->comment    = htmlspecialchars($comment);
+//        $action->comment    = htmlspecialchars($comment);
+		//kevin add start 2013-06-02
+        $action->comment    = $comment;
+		//kevin add end 2013-06-02
         $action->extra      = $extra;
 
         /* Get product and project for this object. */

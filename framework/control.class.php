@@ -604,10 +604,27 @@ class control
      */
     public function display($moduleName = '', $methodName = '')
     {
-        if(empty($this->output)) $this->parse($moduleName, $methodName);
+        if(empty($this->output))$this->parse($moduleName, $methodName);
         echo $this->output;
     }
-
+    
+    //kevin add start 2013-06-02
+    /**
+     * Print the content of the view by project.
+     *
+     * @param   string  $moduleName    module name
+     * @param   string  $methodName    method name
+     * @access  public
+     * @return  void
+     */
+    public function displayByProject($projectName, $moduleName , $methodName)
+    {
+    	if(empty($this->output))
+		$this->parse($moduleName.".".strtolower(str_replace(array(" ") ,"-", $projectName)), $methodName);
+    	echo $this->output;
+    }
+    //kevin add end 2013-06-02
+    
     /**
      * Create a link to one method of one module.
      * 
